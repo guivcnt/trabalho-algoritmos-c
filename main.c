@@ -3,20 +3,19 @@
 #include <stdbool.h>
 
 #define MAX_PALAVRA_SIZE 20
-#define TAMANHO_VETOR 20
 
 
-typedef struct FrequenciaPalavra {
+typedef struct Frequencia {
     char palavra[MAX_PALAVRA_SIZE];
     int frequencia;
 };
 
-typedef struct FrequenciaPalavraLookup {
+typedef struct Palavra {
     char palavra[MAX_PALAVRA_SIZE];
     int index;
 };
 
-int find(char * palavra, struct FrequenciaPalavraLookup palavraLookup[], int len){
+int find(char * palavra, struct Palavra palavraLookup[], int len){
     for (int i = 0; i < len; ++i) {
         if(!strcmp(palavra, palavraLookup[i].palavra)){
             return palavraLookup[i].index;
@@ -37,8 +36,8 @@ int main() {
         return -1;
     }
 
-    struct FrequenciaPalavraLookup palavraLookup[20] = {NULL, 0};
-    struct FrequenciaPalavra frequenciaPalavra[200] = {NULL, 0};
+    struct Palavra palavraLookup[20] = {NULL, 0};
+    struct Frequencia frequenciaPalavra[200] = {NULL, 0};
 
 
     int sizearray;
@@ -64,7 +63,7 @@ int main() {
     char caracterBusca;
     int g;
     int v;
-    struct FrequenciaPalavra temp;
+    struct Frequencia temp;
 
         int opcaoMenu;
         printf("1 - Consultar a quantidade de ocorrencias de uma determinada palavra no arquivo\n");
