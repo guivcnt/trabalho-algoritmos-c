@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 #define MAX_PALAVRA_SIZE 20
 
@@ -38,7 +39,6 @@ int main() {
 
     struct Palavra palavraLookup[20] = {NULL, 0};
     struct Frequencia frequenciaPalavra[200] = {NULL, 0};
-
 
     int sizearray;
     int i = 0;
@@ -82,6 +82,7 @@ int main() {
                 printf("Digite a palavra a ser buscada \n");
                 scanf("%s", palavraencontrada);
                 for (int j = 0; j < sizearray; j++) {
+                    if(isalpha(frequenciaPalavra[j].palavra[0]))
                     if (!strcmp(frequenciaPalavra[j].palavra, palavraencontrada)) {
                         printf("%d:%s\n", frequenciaPalavra[j].frequencia, frequenciaPalavra[j].palavra);
                         continue;
@@ -100,6 +101,7 @@ int main() {
                     }
                 }
                 for (int j = 0; j < sizearray; j++) {
+                    if(isalpha(frequenciaPalavra[j].palavra[0]))
                     printf("%d:%s\n", frequenciaPalavra[j].frequencia, frequenciaPalavra[j].palavra);
                 }
 
@@ -115,6 +117,7 @@ int main() {
                     }
                 }
                 for (int j = 0; j < sizearray; j++) {
+                    if(isalpha(frequenciaPalavra[j].palavra[0]))
                     printf("%d:%s\n", frequenciaPalavra[j].frequencia, frequenciaPalavra[j].palavra);
                 }
                 break;
@@ -134,6 +137,7 @@ int main() {
                     }
                 }
                 for (int j = 0; j < sizearray; j++) {
+                    if(isalpha(frequenciaPalavra[j].palavra[0]))
                     printf("%d:%s\n", frequenciaPalavra[j].frequencia, frequenciaPalavra[j].palavra);
                 }
                 break;
@@ -152,6 +156,7 @@ int main() {
                 }
 
                 for (int j = 0; j < sizearray; ++j) {
+                    if(isalpha(frequenciaPalavra[j].palavra[0]))
                     if (caracterBusca == frequenciaPalavra[j].palavra[0]) {
                         printf("%d:%s\n", frequenciaPalavra[j].frequencia, frequenciaPalavra[j]);
 
